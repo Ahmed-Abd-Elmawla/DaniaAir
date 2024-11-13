@@ -218,7 +218,7 @@
                     </li> <!--end::Menu Body--> --}}
                     <!--begin::Menu Footer-->
                     <li class="user-footer">
-                        <a href="#" class="btn btn-default btn-flat">{{ __('dashboard.layout.profile') }}</a>
+                        {{-- <a href="#" class="btn btn-default btn-flat">{{ __('dashboard.layout.profile') }}</a> --}}
                         <a href="{{ route('logout') }}" class="btn btn-default btn-flat float-end"
                             onclick="event.preventDefault(); disableBackButton(); document.getElementById('logout-form').submit();">
                             {{ __('dashboard.layout.sign_out') }}

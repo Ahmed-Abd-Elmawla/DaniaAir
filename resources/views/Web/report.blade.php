@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-    <div class="container ">
+    <div class="container mb-5">
         <form class="needs-validation mt-5" id="safetyForm" enctype="multipart/form-data" novalidate>
             {{-- @csrf --}}
             <!--begin::Body-->
