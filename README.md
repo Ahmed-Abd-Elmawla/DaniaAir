@@ -84,7 +84,7 @@ __Development__
 > [!NOTE]
 > The following schema design for main project tables only
 
-<p align="center"><img src="public\assets\images\database.png" width="400" alt="Database schema"></p>
+<p align="center"><img src="public\assets\images\database.png" width="800" alt="Database schema"></p>
 
 __There are some other tables like:__
 1. `admins` table
