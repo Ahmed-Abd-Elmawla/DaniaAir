@@ -1,33 +1,100 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://daniaair.com" target="_blank"><img src="public\assets\images\logo.png" width="400" alt="Dania Air Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## Installation
+After downloading the project files to your machine you need to follow this instructions:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Create `.env` file and copy the content of `.env.example` to it
 
-<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto">
-<pre>composer install</pre>
-<div class="zeroclipboard-container">
-    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="composer install" tabindex="0" role="button">
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
-    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-</svg>
-      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
-    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-</svg>
-    </clipboard-copy>
-  </div></div>
+```bash
+cp .env.example .env
+```
 
-## Security Vulnerabilities
+2. Open `.env` file and edit the following configuration based on the configuration for your machine
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```php
+APP_URL=
 
-## License
+DB_CONNECTION=
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+```
+> [!CAUTION]
+> Make sure you have entered the configuration for your machine correctly before continuing
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. After create the database you can install composer dependencies
+
+```bash
+composer install
+```
+
+4. After complete the dependencies run this custom command to complete the installation
+
+```bash
+php artisan dania-air:install
+```
+
+Once finished a link will appear in terminal `CTRL + Click it` to open in your browser
+
+> [!TIP]
+> You can login to dashboard by using the following credentials:
+>
+> Email
+> ```bash
+> admin@admin.com
+> ```
+> Password
+> ```bash
+> 123456789
+> ```
+
+## Approach and thought process
+
+I choose Safety checkList file and i found it contain multiple languages `Arabic` and `English`
+and can be divide it into some database tables like the following:
+
+1. `safety_categories` for the main safety topics
+2. `safety_items` in relation with `safety_categories` as every `safety_category` have many items
+3. `safety_reports` to store the general safety report information like inspector name, date and time
+4. `report_item` to store safety report items, as many to many relation between `safety_reports` and `safety_items`
+
+__Development__
+- Start to build mini dashboard to control this tables:
+1. Implement the main layouts views
+2. Create authentication and admin cruds for dashboard and it's views
+3. Create cruds for `safety_categories` and it's views
+4. Create cruds for `safety_items` and it's views 
+5. Create cruds for `safety_reports` and it's views
+6. Added all needed routes for dashboard
+
+- Start to build web view for users:
+1. Designed simple home page with login button to dashboard and other button to report page
+2. Designed a form to create safety report with some interacted animations
+
+> [!TIP]
+> After finished form design added some enhancement like:
+>
+> - `Notifications` after new report added it will send database notification to admin to check it
+
+## Database schema design
+
+> [!NOTE]
+> The following schema design for main project tables only
+
+<p align="center"><img src="public\assets\images\database.png" width="400" alt="Database schema"></p>
+
+__There are some other tables like:__
+1. `admins` table
+2. `notifications` table
+
+## Challenges
+
+__There are some challenges appear__
+- To make organized, easy to use form look like the file 
+- to show all items from the database with their categories
+- to submit the form with its all items data and validate it before create and show every error in it's place
+
+

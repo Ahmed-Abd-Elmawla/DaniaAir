@@ -30,19 +30,19 @@ class daniaAir extends Command
         shell_exec('npm install');
         $this->info("npm install completed.");
 
-        // Run composer install
-        $this->info("Running composer install...");
-        shell_exec('composer install');
-        $this->info("composer install completed.");
-
         // Run php artisan migrate --seed
         $this->info("Running migrations with seeding...");
         $this->call('migrate', ['--seed' => true]);
         $this->info("Migrations and seeding completed.");
 
+        // Run php artisan storage:link
+        $this->info("Creating storage symlink...");
+        $this->call( 'storage:link');
+        $this->info("Storage symlink created.");
+
         // Start the server in a background process
         $this->info("Starting the Laravel development server...");
-        shell_exec('php artisan serve > /dev/null 2>&1 &');
+        $this->call('serve');
         $this->info("Laravel development server started.");
 
         $this->info('All dependencies installed, migrations seeded, and server started successfully!');
