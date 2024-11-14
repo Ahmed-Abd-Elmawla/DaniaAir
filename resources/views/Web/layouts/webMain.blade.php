@@ -184,18 +184,19 @@
         .activee a {
             background-color: #198754 !important;
             border-color: #198754 !important;
-                        color: #fff !important;
+            color: #fff !important;
         }
 
         .notification-container {
             max-height: 325px;
             overflow-y: auto;
         }
-.activee a {
+
+        .activee a {
             color: #fff !important;
         }
 
-        .sidebar-brand .brand-link .brand-image{
+        .sidebar-brand .brand-link .brand-image {
             max-height: 50px !important;
         }
 
@@ -207,38 +208,45 @@
             font-weight: 600;
             font-size: 18px;
         }
-        .web-btn{
+
+        .web-btn {
             border-color: #263b72;
             color: #263b72;
             border-radius: 0.3em;
             font-weight: 600;
             transition: background-color 0.3s ease;
         }
-        .web-btn:hover{
+
+        .web-btn:hover {
             color: #fff;
             background-color: #263b72;
             border-color: #263b72;
         }
 
         .text-wrap {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-    }
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
 
-    .green-checked:checked {
-        background-color: green;
-        border-color: green;
-    }
+        .green-checked:checked {
+            background-color: green;
+            border-color: green;
+        }
 
-    .red-checked:checked {
-        background-color: red;
-        border-color: red;
-    }
+        .red-checked:checked {
+            background-color: red;
+            border-color: red;
+        }
 
-    .custom-placeholder::placeholder {
-    opacity: 0.5;
-}
+        .custom-placeholder::placeholder {
+            opacity: 0.5;
+        }
+
+        .form-check-input {
+            cursor: pointer;
+            border-color: #263b72;
+        }
     </style>
 </head> <!--end::Head--> <!--begin::Body-->
 
@@ -427,7 +435,7 @@
     <!-- Include SweetAlert2 CSS and JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-@yield('scripts')
+    @yield('scripts')
 </body><!--end::Body-->
 
 </html>
