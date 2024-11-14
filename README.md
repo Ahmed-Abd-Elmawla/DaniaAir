@@ -1,4 +1,4 @@
-<p align="center"><a href="https://daniaair.com" target="_blank"><img src="public\assets\images\logo.png" width="400" alt="Dania Air Logo"></a></p>
+<p align="center"><a href="https://daniaair.com" target="_blank"><img src="public\assets\images\logo.png" width="400" alt="Dania Air Logo"></a></p> 
 
 
 ## Installation
