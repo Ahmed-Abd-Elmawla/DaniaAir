@@ -15,7 +15,6 @@ cp .env.example .env
 ```php
 APP_URL=
 
-DB_CONNECTION=
 DB_HOST=
 DB_PORT=
 DB_DATABASE=

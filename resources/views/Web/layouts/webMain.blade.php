@@ -235,6 +235,10 @@
         background-color: red;
         border-color: red;
     }
+
+    .custom-placeholder::placeholder {
+    opacity: 0.5;
+}
     </style>
 </head> <!--end::Head--> <!--begin::Body-->
 

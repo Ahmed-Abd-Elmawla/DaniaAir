@@ -16,7 +16,6 @@ class AdminsController extends Controller
     public function index()
     {
         $admins = Admin::active()->latest()->paginate();
-        // return response()->json($admins);
         return view('pages.Admins.AdminList', compact('admins'));
     }
 
@@ -60,7 +59,6 @@ class AdminsController extends Controller
 
     public function destroy(Admin $admin)
     {
-        // dd($this->position());
         $admin->delete();
         toast(__('dashboard.admin.successfully_deleted'), 'success')->timerProgressBar()->width('350px')->padding('10px')->position($this->position())->flash();
         return redirect()->back();

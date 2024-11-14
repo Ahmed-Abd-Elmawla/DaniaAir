@@ -17,7 +17,6 @@ class CategoriesController extends Controller
     {
         $categories = SafetyCategory::latest()->paginate();
         $categoriesData = SafetyCategoryResource::collection($categories);
-        // dd($categoriesData);
         return view('pages.Categories.categories', compact('categoriesData'));
     }
 

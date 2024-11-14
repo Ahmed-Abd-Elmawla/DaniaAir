@@ -21,8 +21,6 @@ use App\Http\Controllers\Dashboard\SafetyReports\SafetyReportsController;
 |
 */
 
-Route::get('/home', [App\Http\Controllers\Dashboard\Home\HomeController::class, 'index'])->middleware('auth');
-
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),

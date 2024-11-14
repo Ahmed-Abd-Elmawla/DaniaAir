@@ -28,8 +28,7 @@
                                 <h4 class="web_main_color web_main_font">{{ __('web.report.desc') }}</h4>
                             </div>
                             <div class="col-1 d-flex align-items-center">
-                                <h4 class="me-1 web_main_color web_main_font">{{ __('web.report.yes') }}</h4>
-                                <h4 class="ms-1 web_main_color web_main_font">{{ __('web.report.no') }}</h4>
+                                <h4 class="me-1 web_main_color web_main_font">{{ __('web.report.status') }}</h4>
                             </div>
                             <div class="col-md-3 d-flex align-items-center">
                                 <h4 class="web_main_color web_main_font">{{ __('web.report.comment') }}</h4>
@@ -52,19 +51,22 @@
                                             {{ $item->item_desc }}
                                         </label>
                                     </div>
+
                                     <div class="col-1 d-flex align-items-center">
+                                        <label class="web_main_color me-1">{{ __('web.report.yes') }}</label>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input green-checked" type="radio"
                                                 name="status_{{ $item->id }}" value="1" required>
                                         </div>
+                                        <label class="web_main_color me-1">{{ __('web.report.no') }}</label>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input red-checked" type="radio"
                                                 name="status_{{ $item->id }}" value="0" required>
                                         </div>
                                     </div>
                                     <div class="col-md-3 d-flex align-items-center">
-                                        <input type="text" name="comment_{{ $item->id }}" class="form-control"
-                                            minlength="2" required>
+                                        <input type="text" name="comment_{{ $item->id }}" class="form-control custom-placeholder"
+                                            minlength="2" placeholder="{{__('web.report.place_holder')}}" required>
                                         <input type="hidden" name="item_id_{{ $item->id }}"
                                             value="{{ $item->id }}">
                                     </div>

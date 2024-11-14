@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Web\User\SafetyReports;
 
 use Throwable;
-use App\Models\SafetyItem;
 use App\Models\SafetyReport;
 use Illuminate\Http\Request;
 use App\Traits\AlertPosition;
@@ -22,14 +21,12 @@ class SafetyReportController extends Controller
     public function index(Request $request)
     {
         $categories = SafetyCategory::with('items')->get();
-        // return response()->json($categories);
-        return view('web.report', compact('categories'));
+        return view('Web.report', compact('categories'));
     }
 
     public function store(ReportRequest $request)
     {
         $data = $request->safe()->except('reportItems');
-        // dd($data);
         DB::beginTransaction();
         try {
 

@@ -11,6 +11,13 @@ return [
         'yes' => 'نعم',
         'no' => 'لا',
         'comment' => 'التعليق',
-        'successfully_created' => 'تم إنشاء التقرير بنجاح'
+        'successfully_created' => 'تم إنشاء التقرير بنجاح',
+        'status' => 'الحالة',
+        'place_holder' => 'التعليق (إختياري)',
+    ],
+
+    'login' => [
+        'title' => 'تسجيل الدخول',
+        'dashboard' => 'لوحة التحكم',
     ],
 ];

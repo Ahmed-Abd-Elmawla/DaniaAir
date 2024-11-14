@@ -11,6 +11,13 @@ return [
         'yes' => 'Yes',
         'no' => 'No',
         'comment' => 'Comment',
-        'successfully_created' => 'Report created successfully'
+        'successfully_created' => 'Report created successfully',
+        'status' => 'Status',
+        'place_holder' => 'Comment (optional)',
+    ],
+
+    'login' => [
+        'title' => 'Login',
+        'dashboard' => 'Dashboard',
     ],
 ];

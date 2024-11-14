@@ -86,13 +86,4 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function deleted_list(Request $request)
-    {
-        // Retrieve only the soft-deleted users
-        $deletedUsers = User::onlyTrashed()->latest()->get();
-
-        // Return the collection of deleted users with a status and message
-        return UserResource::collection($deletedUsers)->additional(['status' => 200, 'message' => __('dashboard.success')]);
-    }
-
 }
