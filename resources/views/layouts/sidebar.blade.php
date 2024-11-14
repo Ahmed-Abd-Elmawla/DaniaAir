@@ -48,6 +48,15 @@
                         </p>
                     </a>
                 </li>
+<hr>
+                <li class="nav-item"> <a href="{{ route('web.home') }}"
+                    class="nav-link reset-focus-style">
+                    <i class="nav-icon fa-solid fa-link"></i>
+                    <p>
+                        {{ __('dashboard.layout.website') }}
+                    </p>
+                </a>
+            </li>
 
             </ul>
             <!--end::Sidebar Menu-->

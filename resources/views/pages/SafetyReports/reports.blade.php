@@ -11,11 +11,10 @@
         <!-- /.card-header -->
         <div class="card-body mt-3 mb-3">
             <!-- Button to trigger modal -->
-            {{-- <button type="button" class="btn btn-outline-success rounded-0 float-end mb-2" data-bs-toggle="modal"
-                    onclick="openModal('create')"><i
-                    class="bi bi-person-plus-fill m-1 ms-0"></i>
-                {{ __('dashboard.client.add') }}
-            </button> --}}
+            <a type="button" href="{{ route('report.index') }}" target="_blank" class="btn btn-outline-success rounded-0 float-end mb-2"><i
+                    class="fa-solid fa-file-invoice m-1 ms-0"></i>
+                {{ __('web.home.safety-reports-add') }}
+            </a>
             <table class="table table-bordered">
                 <thead>
                     <tr>

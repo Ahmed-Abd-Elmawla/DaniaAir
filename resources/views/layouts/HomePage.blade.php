@@ -53,22 +53,22 @@
                             {{ __('dashboard.home.more') }} <i class="bi bi-link-45deg"></i> </a>
                     </div>
                 </div>
-
-                <div class="col-lg-8 col-6"> <!--begin::Small Box Widget 1-->
-                    <div class="small-box text-bg-success">
-                        <div class="inner">
-                            <h3>{{ $reports }}</h3>
-                            <p>{{ __('dashboard.home.reports') }}</p>
+                <div class="row d-flex flex-column align-items-center">
+                    <div class="col-lg-8 col-6"> <!--begin::Small Box Widget 1-->
+                        <div class="small-box text-bg-success">
+                            <div class="inner">
+                                <h3>{{ $reports }}</h3>
+                                <p>{{ __('dashboard.home.reports') }}</p>
+                            </div>
+                            <div class="small-box-icon">
+                                <i class="fa-solid fa-file-invoice" fill="currentColor"></i>
+                            </div>
+                            <a href="{{ route('reports.index') }}"
+                                class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
+                                {{ __('dashboard.home.more') }} <i class="bi bi-link-45deg"></i> </a>
                         </div>
-                        <div class="small-box-icon">
-                            <i class="fa-solid fa-file-invoice" fill="currentColor"></i>
-                        </div>
-                        <a href="{{ route('reports.index') }}"
-                            class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
-                            {{ __('dashboard.home.more') }} <i class="bi bi-link-45deg"></i> </a>
                     </div>
                 </div>
-
             </div> <!--end::Row--> <!--begin::Row-->
 
         </div> <!-- /.row (main row) -->

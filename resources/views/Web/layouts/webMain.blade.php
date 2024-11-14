@@ -19,18 +19,15 @@
     <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Third Party Plugin(Bootstrap Icons)-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css"
         integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
-    <!--end::Third Party Plugin(Bootstrap Icons)--><!--begin::Required Plugin(AdminLTE)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
     @if (App::getLocale() == 'en')
         <link href="{{ asset('assets/dist/css/adminlte.min.css') }}" rel="stylesheet">
     @else
         <link href="{{ asset('assets/dist/css/adminlte.rtl.min.css') }}" rel="stylesheet">
     @endif
     {{-- <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}"> --}}
-    <!--end::Required Plugin(AdminLTE)--><!-- apexcharts -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
-        integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous"><!-- jsvectormap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
-        integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4=" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -209,15 +206,16 @@
             font-size: 18px;
         }
 
-        .web-btn {
+        .web-home-btn {
             border-color: #263b72;
             color: #263b72;
             border-radius: 0.3em;
             font-weight: 600;
             transition: background-color 0.3s ease;
+            width: 250px !important;
         }
 
-        .web-btn:hover {
+        .web-home-btn:hover {
             color: #fff;
             background-color: #263b72;
             border-color: #263b72;
@@ -247,6 +245,57 @@
             cursor: pointer;
             border-color: #263b72;
         }
+
+        .col-8.web-home {
+            position: relative;
+            /* width: 100%; */
+            height: 88.28vh;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(7, 7, 7, 0.482);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay h1 {
+            font-family: "Acme", sans-serif;
+            font-size: 60px !important;
+            font-weight: 600;
+        }
+
+
+        @media (max-width: 992px) {
+            .overlay h1 {
+                font-size: 48px !important;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .overlay h1 {
+                font-size: 36px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .overlay h1 {
+                font-size: 28px !important;
+            }
+        }
+
+        .web-content {
+            overflow-x: hidden;
+        }
     </style>
 </head> <!--end::Head--> <!--begin::Body-->
 
@@ -274,7 +323,7 @@
         <!--begin::App Main-->
 
 
-        <main class="app-main"> <!--begin::App Content Header-->
+        <main class="app-main p-0"> <!--begin::App Content Header-->
 
             @yield('content')
 

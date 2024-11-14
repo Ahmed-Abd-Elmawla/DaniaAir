@@ -2,6 +2,8 @@
 return [
     'home' => [
         'title' => 'Home',
+        'h1' => 'We Promise and Guarantee',
+        'h2' => 'We Produce Your Vision',
         'safety-reports-add' => 'Add Safety Report',
     ],
 

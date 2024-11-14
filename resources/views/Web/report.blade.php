@@ -109,7 +109,7 @@
             </div>
             <div class="col-12 mt-4 text-center">
                 <button id="CreateFormSubmit" onclick="submitReport(event)"
-                    class="btn web-btn pe-5 ps-5 mb-5 mt-5">{{ __('dashboard.layout.save') }}</button>
+                    class="btn web-home-btn pe-5 ps-5 mb-5 mt-5">{{ __('dashboard.layout.save') }}</button>
             </div>
         </form>
     </div>

@@ -47,6 +47,7 @@ return [
         'item_desc_en' =>'Item Description In English',
         'status' => 'Status',
         'comment' => 'Comment',
+        'website' => 'Dania Air Website',
     ],
 
     'validation' => [

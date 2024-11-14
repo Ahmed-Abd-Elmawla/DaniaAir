@@ -42,6 +42,7 @@ return [
         'item_desc_en' =>'تفاصيل العنصر بالإنجليزية',
         'status' => 'الحالة',
         'comment' => 'التعليق',
+        'website' => 'الموقع الرسمي',
     ],
 
     'validation' => [
