@@ -119,9 +119,12 @@
 </nav>
 
 <script>
-    // Color Mode Toggler
+    // Color Mode Toggler with Custom Colors
     (() => {
         "use strict";
+
+        const LIGHT_MODE_COLOR = "#263b72";
+        const DARK_MODE_COLOR = "#4a69bf";
 
         const storedTheme = localStorage.getItem("theme");
 
@@ -135,18 +138,22 @@
                 "light";
         };
 
-        const setTheme = function(theme) {
+        const setTheme = (theme) => {
+            const root = document.documentElement;
             if (
                 theme === "auto" &&
                 window.matchMedia("(prefers-color-scheme: dark)").matches
             ) {
                 document.documentElement.setAttribute("data-bs-theme", "dark");
+                root.style.setProperty("--main-color", DARK_MODE_COLOR);
+            } else if (theme === "dark") {
+                document.documentElement.setAttribute("data-bs-theme", "dark");
+                root.style.setProperty("--main-color", DARK_MODE_COLOR);
             } else {
-                document.documentElement.setAttribute("data-bs-theme", theme);
+                document.documentElement.setAttribute("data-bs-theme", "light");
+                root.style.setProperty("--main-color", LIGHT_MODE_COLOR);
             }
         };
-
-        setTheme(getPreferredTheme());
 
         const showActiveTheme = (theme, focus = false) => {
             const themeSwitcher = document.querySelector("#bd-theme");
@@ -187,7 +194,9 @@
             });
 
         window.addEventListener("DOMContentLoaded", () => {
-            showActiveTheme(getPreferredTheme());
+            const preferredTheme = getPreferredTheme();
+            setTheme(preferredTheme);
+            showActiveTheme(preferredTheme);
 
             for (const toggle of document.querySelectorAll("[data-bs-theme-value]")) {
                 toggle.addEventListener("click", () => {

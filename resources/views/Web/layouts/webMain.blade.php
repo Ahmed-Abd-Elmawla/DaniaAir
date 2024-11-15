@@ -198,7 +198,7 @@
         }
 
         .web_main_color {
-            color: #263b72;
+            color: var(--main-color);
         }
 
         .web_main_font {
@@ -207,8 +207,8 @@
         }
 
         .web-home-btn {
-            border-color: #263b72;
-            color: #263b72;
+            border-color: var(--main-color);
+            color: var(--main-color);
             border-radius: 0.3em;
             font-weight: 600;
             transition: background-color 0.3s ease;
@@ -217,8 +217,8 @@
 
         .web-home-btn:hover {
             color: #fff;
-            background-color: #263b72;
-            border-color: #263b72;
+            background-color: var(--main-color);
+            border-color:var(--main-color);
         }
 
         .text-wrap {
@@ -243,7 +243,7 @@
 
         .form-check-input {
             cursor: pointer;
-            border-color: #263b72;
+            border-color: var(--main-color);
         }
 
         .col-8.web-home {
